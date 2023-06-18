@@ -11,7 +11,6 @@ public class JavaTest {
         ArrayList<String> arrayList = new ArrayList<String>();
         List<String> l = Arrays.asList("1","2");
         l.set(0,"9");
-        l.remove(0);
-        System.out.println(l);
+        System.out.println(JavaTest.class);
     }
 }

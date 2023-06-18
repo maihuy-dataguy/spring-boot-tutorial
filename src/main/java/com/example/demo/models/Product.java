@@ -1,22 +1,33 @@
 package com.example.demo.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 //POJO plain object java object (chứa các hàm setter, getter, construction)
+@Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)//auto-increment
     private Long id;
+
     private String productName;
     private int year;
     private Double price;
     private String url;
 
-    public Product(Long id, String productName, int year, Double price, String url) {
-        this.id = id;
+    public Product() {
+    }
+
+    //default constructor
+    public Product(String productName, int year, Double price, String url) {
         this.productName = productName;
         this.year = year;
         this.price = price;
         this.url = url;
     }
 
-    //default constructor
 
     @Override
     public String toString() {
